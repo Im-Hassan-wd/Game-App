@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* body {
+  background: rgb(40, 40, 40);
+  color: white;
+} */
+
+h2 {
+  margin: 20px 0px 10px 50px;
+}
+
+.search {
+  margin: 3% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search h1 {
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
+.search input {
+  width: 300px;
+  padding: 5px 10px;
+  border: 2px solid rgb(83, 7, 36);
+  font-size: 18px;
+  /* box-shadow: 1px 3px 5px rgb(51, 45, 45); */
+  outline-color: rgb(75, 74, 74);
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 10px 50px;
+  margin-bottom: 30px;
+}
+
+.games h3 {
+  font-size: 1rem;
+}
+
+.game {
+  box-shadow: 1px 3px 5px rgb(87, 85, 85);
+  cursor: pointer;
+}
+
+.game h4 {
+  font-weight: 300;
+}
+
+.game-header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.game-body {
+  height: 350px;
+}
+
+.game img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-details-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: black;
+  display: none;
+  background: rgba(42, 42, 42, 0.7);
+}
+
+.game-details-container.open {
+  display: block;
+}
+
+.game-details {
+  position: relative;
+  border-radius: 10px;
+  background: white;
+  margin: 5% auto;
+  width: 90%;
+  padding: 30px;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.details-title h3,
+.rating h3 {
+  padding: 5px 0;
+}
+
+.rating p {
+  padding: 2px 0;
+  font-style: oblique;
+}
+
+.details-title img {
+  display: flex;
+  justify-content: center;
+  /* display: none; */
+}
+
+.details-body {
+  width: 100%;
+}
+
+.details-body p {
+  margin: 50px 10px;
+}
+
+.details-body img {
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .games {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .games {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+}
