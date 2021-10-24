@@ -36,7 +36,9 @@ const updateGames = (data) => {
 				preview.src = image.src;
 				previewTitle.textContent = e.target.alt;
 				rating.textContent = image.getAttribute('data-rating');
-				console.log(games);
+				e.target.getAttribute("data-shorts").map(shot => {
+					console.log(shot);
+				});
 			});
 		});
 
