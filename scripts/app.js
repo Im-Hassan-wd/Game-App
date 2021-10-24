@@ -6,10 +6,13 @@ const screenshotPreviews = document.querySelectorAll('.screenshot img');
 const previewTitle = document.querySelector('.rating h3');
 const rating = document.querySelector('.rating p');
 
+screenshotPreviews.forEach(screenshot => {});
+
 
 const updateGames = (data) => {
 
 	const games = data.games;
+	localStorage.setItem(games, "games");
 
 	games.forEach(({ name, released, background_image, rating, short_screenshots }) => {
 		addGame.innerHTML += `
@@ -36,7 +39,9 @@ const updateGames = (data) => {
 				preview.src = image.src;
 				previewTitle.textContent = e.target.alt;
 				rating.textContent = image.getAttribute('data-rating');
-				console.log(games);
+
+				//game screenshots
+				
 			});
 		});
 
