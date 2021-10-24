@@ -14,7 +14,7 @@ const updateGames = (data) => {
 	const games = data.games;
 	localStorage.setItem(games, "games");
 
-	games.forEach(({ name, released, background_image, rating, short_screenshots }) => {
+	games.forEach(({ name, released, background_image, rating, short_screenshots }, i) => {
 		addGame.innerHTML += `
 			<div class="game">
 				<div class="game-header">
@@ -22,7 +22,7 @@ const updateGames = (data) => {
 					<h4>${released}</h4>
 				</div>
 				<div class="game-body">
-					<img src="${background_image}" alt="${name}" data-rating="${rating}">
+					<img src="${background_image}" alt="${name}" data-shots="${data[i].short_screenshots}" data-rating="${rating}">
 				</div>
 			</div>
 		`;
@@ -41,7 +41,9 @@ const updateGames = (data) => {
 				rating.textContent = image.getAttribute('data-rating');
 
 				//game screenshots
-				
+				e.target.getAttribute("data-shorts").map(shot => {
+					console.log(shot);
+				});
 			});
 		});
 
